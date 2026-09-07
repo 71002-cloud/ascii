@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
-    <title>ascii</title>
+    <title>ASCII Art creator</title>
   </head>
   <body>
     <header>
-      <h1>ASCII Art</h1>
+      <h1>ASCII Art creator</h1>
     </header>
 
     <main>
       <div class="working-station">
         <div class="image-upload-container">
-          <input type="file" id="image-upload" accept="image/*" onchange="uploadImage()" />
+          <input type="file" id="image-upload" accept="image/*" onchange="uploadImage()" onclick="clearCanvas()" />
+          <label for="image-upload" id="upload-label">Upload Image</label>
           <div class="canvas-container">
             <canvas id="upload images" width="400" height="400"></canvas>
           </div>

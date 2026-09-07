@@ -1,6 +1,7 @@
 // DOM elements
 const elConvertBtn = document.getElementById("convert");
 const elImageUpload = document.getElementById("image-upload");
+const elUploadLabel = document.getElementById("upload-label");
 const elContrastSlider = document.getElementById("contrast-slider");
 const symbols = document.getElementById("symbols");
 const elContrastValue = document.getElementById("contrast-value");
@@ -179,4 +180,17 @@ function copyToClipboard() {
         }
     };
     copyContent();
+}
+
+elImageUpload.addEventListener("change", () => {
+    if (elImageUpload.files.length > 0) {
+        elUploadLabel.style.display = "none";
+    } else {
+        elUploadLabel.style.display = "block";
+    }
+});
+
+function clearCanvas() {
+    ctx.clearRect(0, 0, elCanvas.width, elCanvas.height);
+    elImageUpload.value = "";
 }
